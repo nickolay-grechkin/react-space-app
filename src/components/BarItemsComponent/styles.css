@@ -1,0 +1,17 @@
+.barItem {
+    display: flex;
+    grid-column-gap: 0.625rem;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.activeBarItem {
+    border-bottom: 3px solid white;
+}
+
+
+.pageNumber {
+    font-weight: 700;
+}

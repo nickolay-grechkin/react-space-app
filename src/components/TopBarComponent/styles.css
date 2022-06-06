@@ -1,0 +1,51 @@
+.topNavBarWrapper {
+    height: 96px;
+    margin-top: 2.5rem;
+    margin-left: 3.438rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagesBarWrapper {
+    width: 57%;
+    height: 6rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagesBar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1rem;
+    line-height: 1.188rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+    grid-column-gap: 4rem;
+}
+
+.barItem {
+    display: flex;
+    grid-column-gap: 0.625rem;
+    height: 6rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageNumber {
+    font-weight: 700;
+}
+
+.dividerLine {
+    position: absolute;
+    height: 1px;
+    width:35%;
+    left: 12%;
+    background-color: white;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    z-index: 1;
+}
