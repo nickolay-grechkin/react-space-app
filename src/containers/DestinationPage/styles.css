@@ -39,6 +39,7 @@
 
 .planetsDetailedContainer {
     width: 100%;
+    transition: .03s;
 }
 
 .planetDescription {

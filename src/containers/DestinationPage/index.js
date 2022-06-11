@@ -39,23 +39,23 @@ const planetsDetailedInfo = [
         planetDistanceData: '225 mil. km',
         travelInfo: '9 months'
     },
-    {
-        name: 'Europa',
-        description: 'The smallest of the four Galilean moons orbiting Jupiter, Europa is a \n' +
-            '  winter lover’s dream. With an icy surface, it’s perfect for a bit of \n' +
-            '  ice skating, curling, hockey, or simple relaxation in your snug \n' +
-            '  wintery cabin.',
-        planetDistanceData: '628 mil. km',
-        travelInfo: '3 years'
-    },
-    {
-        name: 'Titan',
-        description: 'The only moon known to have a dense atmosphere other than Earth, Titan \n' +
-            '  is a home away from home (just a few hundred degrees colder!). As a \n' +
-            '  bonus, you get striking views of the Rings of Saturn.',
-        planetDistanceData: '1.6 bil. km',
-        travelInfo: '7 years'
-    }
+    // {
+    //     name: 'Europa',
+    //     description: 'The smallest of the four Galilean moons orbiting Jupiter, Europa is a \n' +
+    //         '  winter lover’s dream. With an icy surface, it’s perfect for a bit of \n' +
+    //         '  ice skating, curling, hockey, or simple relaxation in your snug \n' +
+    //         '  wintery cabin.',
+    //     planetDistanceData: '628 mil. km',
+    //     travelInfo: '3 years'
+    // },
+    // {
+    //     name: 'Titan',
+    //     description: 'The only moon known to have a dense atmosphere other than Earth, Titan \n' +
+    //         '  is a home away from home (just a few hundred degrees colder!). As a \n' +
+    //         '  bonus, you get striking views of the Rings of Saturn.',
+    //     planetDistanceData: '1.6 bil. km',
+    //     travelInfo: '7 years'
+    // }
 ]
 const DestinationPage = () => {
     const [selectedTabNumber, setSelectedTabNumber] = useState(0);
@@ -90,14 +90,12 @@ const DestinationPage = () => {
                     />
                 ))}
             </div>
-            <PlanetsDetailedComponent props={{
-                planetsLabels,
-                setSelectedTabNumber,
-                name: planetsDetailedInfo[selectedTabNumber].name,
-                description: planetsDetailedInfo[selectedTabNumber].description,
-                planetDistanceData: planetsDetailedInfo[selectedTabNumber].planetDistanceData,
-                travelInfo: planetsDetailedInfo[selectedTabNumber].travelInfo
-            }}/>
+              <PlanetsDetailedComponent props={{
+                  planetsLabels,
+                  setSelectedTabNumber,
+                  planetsDetailedInfo,
+                  selectedTabNumber
+              }}/>
           </div>
       </div>
     );
