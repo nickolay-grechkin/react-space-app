@@ -1,5 +1,5 @@
 export const controlIndicator = () => {
-    let CONTAINER_PADDING_HALF = "6em";
+    let CONTAINER_PADDING_HALF = "7em";
 
     let nav = document.getElementById("nav");
     let pointer = document.getElementById("pointer");
@@ -9,7 +9,7 @@ export const controlIndicator = () => {
 
     for (let i = 0; i < links.length; i++) {
         let current = links[i];
-        current.dataset.order = i * 138 + "%";
+        current.dataset.order = i * 9.9 + "rem";
         current.addEventListener("click", movePointer);
     }
 
