@@ -1,0 +1,14 @@
+.planetViewed {
+    position: absolute;
+    width: 30%;
+    transform: translate(0, 0);
+    transition: .3s;
+}
+
+.planetHidden {
+    visibility: hidden;
+    position: absolute;
+    width: 30%;
+    transform: translate(100%, 0);
+    transition: .3s;
+}
