@@ -9,7 +9,8 @@ const PlanetsDetailedComponent = ({props}) => {
             <PlanetsBarComponent
                 props={{
                     planetsLabels: props.planetsLabels,
-                    setSelectedTabNumber: props.setSelectedTabNumber
+                    setSelectedTabNumber: props.setSelectedTabNumber,
+                    selectedTabNumber: props.selectedTabNumber
                 }}
             />
             <PlanetDetailedMenuComponent

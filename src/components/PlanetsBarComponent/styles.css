@@ -13,3 +13,15 @@
 
     color: #D0D6F9;
 }
+
+.selectedItemIndicator {
+    border-bottom: 3px solid white;
+    padding-bottom: 20px;
+}
+
+.defaultBarItem:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    mix-blend-mode: normal;
+    padding-bottom: 20px;
+}
+
