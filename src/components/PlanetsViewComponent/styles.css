@@ -1,4 +1,4 @@
-img {
+.planetImage {
     position: absolute;
     width: 445px;
     height: 445px;
@@ -7,4 +7,8 @@ img {
     -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
     top: 30%;
+}
+
+.planetImageContainer {
+    position: relative;
 }

@@ -1,14 +1,17 @@
 import React from "react";
-import './styles.module.css';
+import './styles.css';
 
 const PlanetsViewComponent = ({ props }) => {
     return (
-        <img
-            src={props.image}
-            style={props.selectedTabNumber === props.tabNumber
-                ? {opacity: 'unset'}
-                : {opacity: 0}}
-        />
+        <div className="planetImageContainer">
+            <img
+                className="planetImage"
+                src={props.image}
+                style={props.selectedTabNumber === props.tabNumber
+                    ? {opacity: 'unset'}
+                    : {opacity: 0}}
+            />
+        </div>
     );
 }
 

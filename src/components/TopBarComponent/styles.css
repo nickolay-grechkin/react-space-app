@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    min-width: 74rem;
 }
 
 .topBarIcon{
@@ -57,4 +58,5 @@
     mix-blend-mode: normal;
     opacity: 0.25;
     z-index: 1;
+    min-width: 25rem;
 }

@@ -10,6 +10,7 @@
     height: 100%;
     grid-column-gap: 130px;
     min-width: 60rem;
+    align-items: baseline;
 }
 
 .planetContainer {
