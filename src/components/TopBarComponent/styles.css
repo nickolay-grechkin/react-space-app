@@ -52,7 +52,7 @@
 .dividerLine {
     position: absolute;
     height: 1px;
-    width: 40%;
+    width: 35%;
     background-color: white;
     mix-blend-mode: normal;
     opacity: 0.25;
