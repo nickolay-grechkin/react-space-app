@@ -1,21 +1,25 @@
 .topNavBarWrapper {
     height: 96px;
     margin-top: 2.5rem;
-    margin-left: 3.438rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 80%;
+}
+
+.topBarIcon{
+    position: absolute;
+    left: 55px;
 }
 
 .pagesBarWrapper {
-    width: 57%;
     height: 6rem;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 65rem;
+    min-width: 51rem;
 }
 
 .pagesBar {
@@ -41,11 +45,14 @@
     font-weight: 700;
 }
 
+.dividerWrapper {
+    width: 20.5%;
+}
+
 .dividerLine {
     position: absolute;
     height: 1px;
-    width:35%;
-    left: 12%;
+    width: 40%;
     background-color: white;
     mix-blend-mode: normal;
     opacity: 0.25;

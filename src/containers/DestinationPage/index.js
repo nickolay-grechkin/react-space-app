@@ -62,11 +62,11 @@ const DestinationPage = () => {
 
     return (
       <div className="destinationWrapper">
+          <div className="planetTitle">
+              <span className="planetNumber">01</span> Pick your destination
+          </div>
           <div className="destinationContainer">
             <div className="planetContainer">
-                <div className="planetTitle">
-                    <span className="planetNumber">01</span> Pick your destination
-                </div>
                 {planetsData.map((data, index) => (
                     <PlanetsViewComponent props={{
                         image: data.image,

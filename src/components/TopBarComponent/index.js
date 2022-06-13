@@ -19,8 +19,12 @@ const TopBarComponent = ({props}) => {
 
     return (
         <div className="topNavBarWrapper">
-            <TopBarIcon />
-            <div className="dividerLine" />
+            <div className="topBarIcon">
+                <TopBarIcon />
+            </div>
+            <div className="dividerWrapper">
+                <div className="dividerLine" />
+            </div>
             <div className="pagesBarWrapper">
                 <div className="pagesBar" id="nav">
                     <div className="linkPointer" id="pointer" />
