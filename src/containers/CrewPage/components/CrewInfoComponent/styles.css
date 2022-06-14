@@ -1,0 +1,74 @@
+.crewMemberInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.slideMenuWrapper {
+    display: flex;
+}
+
+.slideIndicator {
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    opacity: 0.17;
+    border-radius: 50%;
+}
+
+.slideIndicatorSelected {
+    opacity: unset;
+}
+
+.crewMemberInfo {
+    margin-top: 9.6rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.crewMemberInfoContainer {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 2rem;
+    width: 65%;
+}
+
+.crewPageNumber {
+    font-weight: 700;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+}
+
+.crewMemberPosition {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 37px;
+    text-transform: uppercase;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.crewMemberName {
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 64px;
+    text-transform: uppercase;
+}
+
+.crewMemberDetailedInfo {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #D0D6F9;
+}
+
+.imageContainer {
+    width: 50%;
+}
+
+.crewImage {
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+}
