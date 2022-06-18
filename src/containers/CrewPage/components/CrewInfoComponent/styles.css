@@ -34,12 +34,6 @@
     width: 65%;
 }
 
-.crewPageNumber {
-    font-weight: 700;
-    mix-blend-mode: normal;
-    opacity: 0.25;
-}
-
 .crewMemberPosition {
     font-weight: 400;
     font-size: 32px;

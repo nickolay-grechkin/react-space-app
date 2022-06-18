@@ -6,6 +6,7 @@ import Victor from '../../assets/crew/image-victor-glover.png';
 import Anousheh from '../../assets/crew/image-anousheh-ansari.png';
 
 import CrewInfoComponent from "./components/CrewInfoComponent";
+import PageHeader from "../../components/PageHeader";
 
 const crewDetailedInfo = [
     {
@@ -48,10 +49,11 @@ const CrewPage = () => {
 
     return (
         <div className="crewWrapper">
-            <div className="crewPageTitle">
-                <div className="crewPageNumber">02</div>
-                <div>Meet your crew</div>
-            </div>
+            <PageHeader props={{
+                    pageNumber: '02',
+                    pageTitle: 'Meet your crew'
+                }}
+            />
             <div className="crewContainer">
                 <CrewInfoComponent props={{
                     position: crewDetailedInfo[selectedSlide].position,

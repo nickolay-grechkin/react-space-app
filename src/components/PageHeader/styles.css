@@ -1,0 +1,18 @@
+.pageTitle {
+    font-family: "Barlow Condensed", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.pageNumber {
+    font-weight: 700;
+    opacity: 0.25;
+    mix-blend-mode: normal;
+}

@@ -7,6 +7,7 @@ import './styles.css';
 import PlanetsViewComponent from "../../components/PlanetsViewComponent";
 import PlanetsBarComponent from "../../components/PlanetsBarComponent";
 import PlanetsDetailedComponent from "../../components/PlanetsDetailedComponent";
+import PageHeader from "../../components/PageHeader";
 
 const planetsData = [
     { image: Moon },
@@ -62,9 +63,11 @@ const DestinationPage = () => {
 
     return (
       <div className="destinationWrapper">
-          <div className="planetTitle">
-              <span className="planetNumber">01</span> Pick your destination
-          </div>
+          <PageHeader props={{
+                  pageNumber: '01',
+                  pageTitle: 'Pick your destination'
+             }}
+          />
           <div className="destinationContainer">
             <div className="planetContainer">
                 {planetsData.map((data, index) => (
