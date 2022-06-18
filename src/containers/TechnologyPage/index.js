@@ -45,7 +45,7 @@ const TechnologyPage = () => {
                 <div className="detailsSliderContainer">
                     <div className="technologySlider">
                         {technologies.map((value, index) => (
-                            <div className={`${selectedSlide !== index ? 'slideButton slideButtonDisable' : 'slideButton'}`}>
+                            <div onClick={() => setSelectedSlide(index)} className={`${selectedSlide !== index ? 'slideButton slideButtonDisable' : 'slideButton'}`}>
                                 {index + 1}
                             </div>
                         ))}

@@ -12,12 +12,14 @@
     align-items: center;
     justify-content: center;
     color: #0B0D17;
+    cursor: pointer;
 }
 
 .technologyContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
 }
 
 .detailsSliderContainer {
