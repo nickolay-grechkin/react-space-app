@@ -1,5 +1,5 @@
 import './styles.css';
-import React from "react";
+import React, {useMemo} from "react";
 import {ReactComponent as TopBarIcon} from "../../assets/shared/logo.svg";
 import {BarItemsComponent} from "../BarItemsComponent";
 import {controlIndicator} from "../../helpers/controll.bar.indicator.helper";
@@ -13,6 +13,10 @@ const barItems = [
 ];
 
 const TopBarComponent = ({props}) => {
+    const isTabletResolution = useMemo(() => {
+        return window.screen.width <= 820;
+    }, [window.screen.width]);
+
     useEffect(() => {
         controlIndicator();
     }, []);
@@ -22,9 +26,11 @@ const TopBarComponent = ({props}) => {
             <div className="topBarIcon">
                 <TopBarIcon />
             </div>
-            <div className="dividerWrapper">
-                <div className="dividerLine" />
-            </div>
+            {!isTabletResolution && (
+                <div className="dividerWrapper">
+                    <div className="dividerLine" />
+                </div>
+            )}
             <div className="pagesBarWrapper">
                 <div className="pagesBar" id="nav">
                     <div className="linkPointer" id="pointer" />

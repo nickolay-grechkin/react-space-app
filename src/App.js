@@ -32,6 +32,7 @@ const appComponents = [
 
 function App() {
     const [activeBarIndex, setActiveBarIndex] = useState(0);
+    console.log(window.screen.width);
     return (
         <div className="appWrapper">
             <img className="appBackImage" src={appComponents[activeBarIndex].backgroundImage} />
@@ -40,7 +41,7 @@ function App() {
                     activeBarIndex,
                     setActiveBarIndex
                 }}/>
-                {appComponents[activeBarIndex].component}
+                {/*{appComponents[activeBarIndex].component}*/}
             </div>
         </div>
   );
