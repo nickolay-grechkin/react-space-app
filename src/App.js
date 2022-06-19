@@ -14,26 +14,27 @@ import TechnologyPage from "./containers/TechnologyPage";
 const appComponents = [
     {
         component: <HomePage />,
-        backgroundImage: `url(${homeBackground})`
+        backgroundImage: homeBackground
     },
     {
         component: <DestinationPage />,
-        backgroundImage: `url(${destinationBackground})`
+        backgroundImage: destinationBackground
     },
     {
         component: <CrewPage />,
-        backgroundImage: `url(${crewBackground})`
+        backgroundImage: crewBackground
     },
     {
         component: <TechnologyPage />,
-        backgroundImage: `url(${technologyBackground})`
+        backgroundImage: technologyBackground
     }
 ]
 
 function App() {
     const [activeBarIndex, setActiveBarIndex] = useState(0);
     return (
-        <div className="appWrapper" style={{backgroundImage: appComponents[activeBarIndex].backgroundImage}}>
+        <div className="appWrapper">
+            <img className="appBackImage" src={appComponents[activeBarIndex].backgroundImage} />
             <div className="appContainer">
                 <TopBarComponent props={{
                     activeBarIndex,
