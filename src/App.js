@@ -3,45 +3,84 @@ import {useState} from "react";
 import HomePage from "./containers/HomePage";
 import TopBarComponent from "./components/TopBarComponent";
 import React from "react";
-import homeBackground from './assets/home/background-home-desktop.jpg';
-import destinationBackground from './assets/destination/background-destination-desktop.jpg';
-import crewBackground from './assets/crew/background-crew-desktop.jpg';
-import technologyBackground from './assets/technology/background-technology-desktop.jpg';
+import homeBackgroundDesktop from './assets/home/background-home-desktop.jpg';
+import homeBackgroundTablet from './assets/home/background-home-tablet.jpg';
+import homeBackgroundMobile from './assets/home/background-home-mobile.jpg';
+import destinationBackgroundDesktop from './assets/destination/background-destination-desktop.jpg';
+import destinationBackgroundTablet from './assets/destination/background-destination-tablet.jpg';
+import destinationBackgroundMobile from './assets/destination/background-destination-mobile.jpg';
+import crewBackgroundDesktop from './assets/crew/background-crew-desktop.jpg';
+import crewBackgroundTablet from './assets/crew/background-crew-tablet.jpg';
+import crewBackgroundMobile from './assets/crew/background-crew-mobile.jpg';
+import technologyBackgroundDesktop from './assets/technology/background-technology-desktop.jpg';
+import technologyBackgroundTablet from './assets/technology/background-technology-tablet.jpg';
+import technologyBackgroundMobile from './assets/technology/background-technology-mobile.jpg';
 import DestinationPage from "./containers/DestinationPage";
 import CrewPage from "./containers/CrewPage";
 import TechnologyPage from "./containers/TechnologyPage";
+import {useEffect} from "react";
 
 const appComponents = [
     {
         component: <HomePage />,
-        backgroundImage: homeBackground
+        backgroundImage: homeBackgroundDesktop,
+        backgroundImageTablet: homeBackgroundTablet,
+        backgroundImageMobile: homeBackgroundMobile
     },
     {
         component: <DestinationPage />,
-        backgroundImage: destinationBackground
+        backgroundImage: destinationBackgroundDesktop,
+        backgroundImageTablet: destinationBackgroundTablet,
+        backgroundImageMobile: destinationBackgroundMobile
     },
     {
         component: <CrewPage />,
-        backgroundImage: crewBackground
+        backgroundImage: crewBackgroundDesktop,
+        backgroundImageTablet: crewBackgroundTablet,
+        backgroundImageMobile: crewBackgroundMobile
     },
     {
         component: <TechnologyPage />,
-        backgroundImage: technologyBackground
+        backgroundImage: technologyBackgroundDesktop,
+        backgroundImageTablet: technologyBackgroundTablet,
+        backgroundImageMobile: technologyBackgroundMobile
     }
 ]
 
 function App() {
     const [activeBarIndex, setActiveBarIndex] = useState(0);
-    console.log(window.screen.width);
+    const [isTabletResolution, setIsTabletResolution] = useState();
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setIsTabletResolution(window.screen.width <= 820);
+        });
+        return () => {
+            window.removeEventListener('resize', () => {
+                setIsTabletResolution(undefined)
+            });
+        }
+    });
+
+    const getBackgroundImage = () => {
+        const { backgroundImage, backgroundImageTablet, backgroundImageMobile } = appComponents[activeBarIndex];
+        if (isTabletResolution) {
+            return backgroundImageTablet;
+        } else {
+            return backgroundImage;
+        }
+    }
+
     return (
         <div className="appWrapper">
-            <img className="appBackImage" src={appComponents[activeBarIndex].backgroundImage} />
+            <img className="appBackImage" src={getBackgroundImage()} />
             <div className="appContainer">
                 <TopBarComponent props={{
                     activeBarIndex,
-                    setActiveBarIndex
+                    setActiveBarIndex,
+                    isTabletResolution
                 }}/>
-                {/*{appComponents[activeBarIndex].component}*/}
+                {appComponents[activeBarIndex].component}
             </div>
         </div>
   );

@@ -13,29 +13,17 @@ const barItems = [
 ];
 
 const TopBarComponent = ({props}) => {
-    const [isTabletResolution, setIsTabletResolution] = useState();
 
     useEffect(() => {
         controlIndicator();
     }, []);
-
-    useEffect(() => {
-        window.addEventListener('resize', () => {
-            setIsTabletResolution(window.screen.width <= 820);
-        });
-        return () => {
-            window.removeEventListener('resize', () => {
-                setIsTabletResolution(undefined)
-            });
-        }
-    });
 
     return (
         <div className="topNavBarWrapper">
             <div className="topBarIcon">
                 <TopBarIcon />
             </div>
-            {!isTabletResolution && (
+            {!props.isTabletResolution && (
                 <div className="dividerWrapper">
                     <div className="dividerLine" />
                 </div>
@@ -52,7 +40,7 @@ const TopBarComponent = ({props}) => {
                                 barIndex: index,
                                 activeBarIndex: props.activeBarIndex,
                                 setActiveBarIndex: props.setActiveBarIndex,
-                                isTabletResolution
+                                isTabletResolution: props.isTabletResolution
                             }}
                         />
                     ))}
