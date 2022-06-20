@@ -4,9 +4,11 @@ export function BarItemsComponent ({ props }) {
             className='barItem'
             onClick={() => props.setActiveBarIndex(props.barIndex)}
         >
-            <div className="pageNumber">
-                {props.number}
-            </div>
+            {!props.isTabletResolution && (
+                <div className="pageNumber">
+                    {props.number}
+                </div>
+            )}
             <div className="pageName">
                 {props.label}
             </div>

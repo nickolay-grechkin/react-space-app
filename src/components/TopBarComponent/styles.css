@@ -3,9 +3,8 @@
     margin-top: 2.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 80%;
-    min-width: 74rem;
 }
 
 .topBarIcon{
@@ -20,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 51rem;
+    width: 60%;
 }
 
 .pagesBar {
@@ -30,7 +29,8 @@
     line-height: 1.188rem;
     font-family: 'Barlow Condensed', sans-serif;
     color: white;
-    grid-column-gap: 4rem;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .barItem {
