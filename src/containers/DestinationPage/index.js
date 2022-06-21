@@ -61,6 +61,19 @@ const planetsDetailedInfo = [
 const DestinationPage = () => {
     const [selectedTabNumber, setSelectedTabNumber] = useState(0);
 
+    const [isTabletResolution, setIsTabletResolution] = useState();
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setIsTabletResolution(window.screen.width <= 820);
+        });
+        return () => {
+            window.removeEventListener('resize', () => {
+                setIsTabletResolution(undefined)
+            });
+        }
+    });
+
     return (
       <div className="destinationWrapper">
           <PageHeader props={{
@@ -74,17 +87,18 @@ const DestinationPage = () => {
                     <PlanetsViewComponent props={{
                         image: data.image,
                         selectedTabNumber: selectedTabNumber,
-                        tabNumber: index
+                        tabNumber: index,
+                        isTabletResolution
                     }}
                     />
                 ))}
             </div>
-              <PlanetsDetailedComponent props={{
-                  planetsLabels,
-                  setSelectedTabNumber,
-                  planetsDetailedInfo,
-                  selectedTabNumber
-              }}/>
+              {/*<PlanetsDetailedComponent props={{*/}
+              {/*    planetsLabels,*/}
+              {/*    setSelectedTabNumber,*/}
+              {/*    planetsDetailedInfo,*/}
+              {/*    selectedTabNumber*/}
+              {/*}}/>*/}
           </div>
       </div>
     );
