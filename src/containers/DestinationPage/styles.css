@@ -19,11 +19,13 @@
 
 @media screen and (max-width: 820px) {
     .destinationContainer {
-        justify-content: center;
-
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
     }
     .planetContainer {
         width: 75%;
+        height: 300px;
     }
 }
 .planetsDetailedContainer {

@@ -93,12 +93,12 @@ const DestinationPage = () => {
                     />
                 ))}
             </div>
-              {/*<PlanetsDetailedComponent props={{*/}
-              {/*    planetsLabels,*/}
-              {/*    setSelectedTabNumber,*/}
-              {/*    planetsDetailedInfo,*/}
-              {/*    selectedTabNumber*/}
-              {/*}}/>*/}
+              <PlanetsDetailedComponent props={{
+                  planetsLabels,
+                  setSelectedTabNumber,
+                  planetsDetailedInfo,
+                  selectedTabNumber
+              }}/>
           </div>
       </div>
     );

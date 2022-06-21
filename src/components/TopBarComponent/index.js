@@ -23,11 +23,11 @@ const TopBarComponent = ({props}) => {
             <div className="topBarIcon">
                 <TopBarIcon />
             </div>
-            {!props.isTabletResolution && (
-                <div className="dividerWrapper">
-                    <div className="dividerLine" />
-                </div>
-            )}
+            {/*{!props.isTabletResolution && (*/}
+            {/*    <div className="dividerWrapper">*/}
+            {/*        <div className="dividerLine" />*/}
+            {/*    </div>*/}
+            {/*)}*/}
             <div className="pagesBarWrapper">
                 <div className="pagesBar" id="nav">
                     <div className="linkPointer" id="pointer" />

@@ -3,13 +3,8 @@
     margin-top: 2.5rem;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: 80%;
-}
-
-.topBarIcon{
-    position: absolute;
-    left: 55px;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .pagesBarWrapper {
@@ -59,4 +54,10 @@
     opacity: 0.25;
     z-index: 1;
     min-width: 25rem;
+}
+
+@media screen and (max-width: 820px) {
+    .topNavBarWrapper {
+        width: 96.4%;
+    }
 }
