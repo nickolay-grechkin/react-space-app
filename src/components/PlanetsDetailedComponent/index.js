@@ -13,12 +13,12 @@ const PlanetsDetailedComponent = ({props}) => {
                     selectedTabNumber: props.selectedTabNumber
                 }}
             />
-            {/*<PlanetDetailedMenuComponent*/}
-            {/*    props={{*/}
-            {/*        planetsDetailedInfo: props.planetsDetailedInfo,*/}
-            {/*        selectedTabNumber: props.selectedTabNumber*/}
-            {/*    }}*/}
-            {/*/>*/}
+            <PlanetDetailedMenuComponent
+                props={{
+                    planetsDetailedInfo: props.planetsDetailedInfo,
+                    selectedTabNumber: props.selectedTabNumber
+                }}
+            />
         </div>
     );
 }

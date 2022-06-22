@@ -24,3 +24,9 @@
     padding-bottom: 20px;
 }
 
+@media screen and (max-width: 820px) {
+    .planetsBarContainer {
+        grid-column-gap: 2rem;
+        width: 50%;
+    }
+}

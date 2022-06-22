@@ -3,32 +3,28 @@ import './styles.css';
 
 const PlanetDetailedMenuComponent = ({props}) => {
     return (
-        <div style={{display: 'flex'}}>
-            <div>
-                {props.planetsDetailedInfo.map((planet, index) => (
-                    <div
-                        className={`${props.selectedTabNumber === index ? 'planetViewed' : 'planetHidden'}`}
-                    >
-                        <div className="planetName">
-                            {planet.name}
+            <div className='detailedWrapper'>
+                <div
+                    className='planetViewed'
+                >
+                    <div className="planetName">
+                        {props.planetsDetailedInfo[props.selectedTabNumber].name}
+                    </div>
+                    <div className="planetDescription">
+                        {props.planetsDetailedInfo[props.selectedTabNumber].description}
+                    </div>
+                    <div className="planetDistanceData">
+                        <div className="distanceInfo">
+                            <div className="label">Avg. distance</div>
+                            <div className="number">{props.planetsDetailedInfo[props.selectedTabNumber].planetDistanceData}</div>
                         </div>
-                        <div className="planetDescription">
-                            {planet.description}
-                        </div>
-                        <div className="planetDistanceData">
-                            <div className="distanceInfo">
-                                <div className="label">Avg. distance</div>
-                                <div className="number">{planet.planetDistanceData}</div>
-                            </div>
-                            <div className="travelInfo">
-                                <div className="label">Est. travel time</div>
-                                <div className="number">{planet.travelInfo}</div>
-                            </div>
+                        <div className="travelInfo">
+                            <div className="label">Est. travel time</div>
+                            <div className="number">{props.planetsDetailedInfo[props.selectedTabNumber].travelInfo}</div>
                         </div>
                     </div>
-                ))}
+                </div>
             </div>
-        </div>
     );
 }
 
