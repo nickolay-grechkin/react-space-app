@@ -70,3 +70,37 @@
     line-height: 32px;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 820px) {
+    .technologyContainer {
+        flex-direction: column-reverse;
+    }
+    .detailsSliderContainer {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-top: 50px;
+    }
+    .technologySlider {
+        flex-direction: unset;
+        grid-column-gap: 32px;
+    }
+    .techTitle, .techName, .techDescription {
+        text-align: center;
+    }
+    .techName {
+        font-size: 40px;
+        line-height: 46px;
+    }
+    .techDescription {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .technologyDetails {
+        margin-top: 44px;
+    }
+    .slideButton {
+        width: 58px;
+        height: 58px;
+    }
+}

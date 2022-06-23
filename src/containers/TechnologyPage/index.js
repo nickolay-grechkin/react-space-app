@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './styles.css';
 import PageHeader from "../../components/PageHeader";
 import capsuleImage from '../../assets/technology/image-space-capsule-portrait.jpg';
 import vehicleLaunchImage from '../../assets/technology/image-launch-vehicle-portrait.jpg'
 import spacePortImage from '../../assets/technology/image-spaceport-portrait.jpg'
+import capsuleImageLandscape from '../../assets/technology/image-space-capsule-landscape.jpg';
+import vehicleLaunchImageLandscape from '../../assets/technology/image-launch-vehicle-landscape.jpg'
+import spacePortImageLandscape from '../../assets/technology/image-spaceport-landscape.jpg'
 
 const technologies = [
     {
@@ -12,7 +15,8 @@ const technologies = [
             '  payload from Earth\'s surface to space, usually to Earth orbit or beyond. Our \n' +
             '  WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, \n' +
             '  it\'s quite an awe-inspiring sight on the launch pad!',
-        img: vehicleLaunchImage
+        img: vehicleLaunchImage,
+        landscapeImg: vehicleLaunchImageLandscape
     },
     {
         name: 'Spaceport',
@@ -20,7 +24,8 @@ const technologies = [
             '  by analogy to the seaport for ships or airport for aircraft. Based in the \n' +
             '  famous Cape Canaveral, our spaceport is ideally situated to take advantage \n' +
             '  of the Earth’s rotation for launch.',
-        img:spacePortImage
+        img:spacePortImage,
+        landscapeImg: spacePortImageLandscape
     },
     {
         name: 'Space capsule',
@@ -28,11 +33,25 @@ const technologies = [
             '  capsule to reenter the Earth\'s atmosphere without wings. Our capsule is where \n' +
             '  you\'ll spend your time during the flight. It includes a space gym, cinema, \n' +
             '  and plenty of other activities to keep you entertained.',
-        img: capsuleImage
+        img: capsuleImage,
+        landscapeImg: capsuleImageLandscape
     }
 ]
 const TechnologyPage = () => {
     const [selectedSlide, setSelectedSlide] = useState(0);
+
+    const [isTabletResolution, setIsTabletResolution] = useState();
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setIsTabletResolution(window.screen.width <= 820);
+        });
+        return () => {
+            window.removeEventListener('resize', () => {
+                setIsTabletResolution(undefined)
+            });
+        }
+    });
 
     return (
         <div className="technologyWrapper">
@@ -57,7 +76,11 @@ const TechnologyPage = () => {
                     </div>
                 </div>
                 <div className='technologyPicture'>
-                    <img src={technologies[selectedSlide].img} />
+                    <img src={isTabletResolution
+                            ? technologies[selectedSlide].landscapeImg
+                            : technologies[selectedSlide].img
+                        }
+                    />
                 </div>
             </div>
         </div>
