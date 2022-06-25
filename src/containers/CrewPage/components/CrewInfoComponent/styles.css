@@ -93,7 +93,18 @@
         flex-direction: unset;
     }
     .crewImage {
-        height: 43%;
-        left: 28%;
+        height: 80%;
+        position: relative;
+    }
+    .slideMenuWrapper {
+        position: absolute;
+        top: 35rem;
+    }
+    .imageContainer {
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
     }
 }
