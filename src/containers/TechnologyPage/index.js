@@ -51,7 +51,7 @@ const TechnologyPage = () => {
                 setIsTabletResolution(undefined)
             });
         }
-    });
+    }, []);
 
     return (
         <div className="technologyWrapper">
@@ -64,7 +64,10 @@ const TechnologyPage = () => {
                 <div className="detailsSliderContainer">
                     <div className="technologySlider">
                         {technologies.map((value, index) => (
-                            <div onClick={() => setSelectedSlide(index)} className={`${selectedSlide !== index ? 'slideButton slideButtonDisable' : 'slideButton'}`}>
+                            <div
+                                key={index}
+                                onClick={() => setSelectedSlide(index)}
+                                className={`${selectedSlide !== index ? 'slideButton slideButtonDisable' : 'slideButton'}`}>
                                 {index + 1}
                             </div>
                         ))}
@@ -79,8 +82,8 @@ const TechnologyPage = () => {
                     <img src={isTabletResolution
                             ? technologies[selectedSlide].landscapeImg
                             : technologies[selectedSlide].img
-                        }
-                    />
+                    }
+                     alt=''/>
                 </div>
             </div>
         </div>

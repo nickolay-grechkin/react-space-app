@@ -10,9 +10,13 @@ const CrewInfoComponent = ({props}) => {
                     <div className="crewMemberName">{props.name}</div>
                     <div className="crewMemberDetailedInfo">{props.info}</div>
                 </div>
-            </div>
-            <div className="imageContainer">
-                <img className="crewImage" src={props.image} />
+                <div className="slideMenuWrapper">
+                    {props.crewDetailedInfo.map((member, index) => (
+                        <div onClick={() => props.setSelectedSlide(index)}
+                             className={`${index === props.selectedSlide ? 'slideIndicatorSelected slideIndicator' : 'slideIndicator'}`}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

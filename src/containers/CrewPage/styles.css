@@ -1,8 +1,10 @@
 .crewWrapper {
     font-family: 'Bellefair', sans-serif;
     color: #FFFFFF;
-    height: 65%;
+    height: 100%;
     width: 90%;
+    display: grid;
+    grid-template-columns: 45% 1fr;
 }
 
 .crewContainer {

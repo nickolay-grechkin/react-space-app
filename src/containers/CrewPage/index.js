@@ -49,26 +49,27 @@ const CrewPage = () => {
 
     return (
         <div className="crewWrapper">
-            <PageHeader props={{
-                    pageNumber: '02',
-                    pageTitle: 'Meet your crew'
-                }}
-            />
-            <div className="crewContainer">
-                <CrewInfoComponent props={{
-                    position: crewDetailedInfo[selectedSlide].position,
-                    name: crewDetailedInfo[selectedSlide].name,
-                    info: crewDetailedInfo[selectedSlide].info,
-                    image: crewDetailedInfo[selectedSlide].image,
+            <div>
+                <PageHeader props={{
+                        pageNumber: '02',
+                        pageTitle: 'Meet your crew'
                     }}
                 />
-                <div className="slideMenuWrapper">
-                    {crewDetailedInfo.map((member, index) => (
-                        <div onClick={() => setSelectedSlide(index)}
-                             className={`${index === selectedSlide ? 'slideIndicatorSelected slideIndicator' : 'slideIndicator'}`}
-                        />
-                    ))}
+                <div className="crewContainer">
+                    <CrewInfoComponent props={{
+                            position: crewDetailedInfo[selectedSlide].position,
+                            name: crewDetailedInfo[selectedSlide].name,
+                            info: crewDetailedInfo[selectedSlide].info,
+                            image: crewDetailedInfo[selectedSlide].image,
+                            selectedSlide,
+                            setSelectedSlide,
+                            crewDetailedInfo
+                        }}
+                    />
                 </div>
+            </div>
+            <div className="imageContainer">
+                <img className="crewImage" src={crewDetailedInfo[selectedSlide].image} alt=''/>
             </div>
         </div>
     );
