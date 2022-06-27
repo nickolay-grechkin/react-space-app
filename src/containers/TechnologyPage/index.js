@@ -40,7 +40,7 @@ const technologies = [
 const TechnologyPage = () => {
     const [selectedSlide, setSelectedSlide] = useState(0);
 
-    const [isTabletResolution, setIsTabletResolution] = useState();
+    const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -51,7 +51,7 @@ const TechnologyPage = () => {
                 setIsTabletResolution(undefined)
             });
         }
-    }, []);
+    }, [setIsTabletResolution]);
 
     return (
         <div className="technologyWrapper">

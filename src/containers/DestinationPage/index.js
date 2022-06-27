@@ -61,7 +61,7 @@ const planetsDetailedInfo = [
 const DestinationPage = () => {
     const [selectedTabNumber, setSelectedTabNumber] = useState(0);
 
-    const [isTabletResolution, setIsTabletResolution] = useState();
+    const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -84,16 +84,19 @@ const DestinationPage = () => {
           <div className="destinationContainer">
             <div className="planetContainer">
                 {planetsData.map((data, index) => (
-                    <PlanetsViewComponent props={{
+                    <PlanetsViewComponent
+                        key={index}
+                        props={{
                         image: data.image,
                         selectedTabNumber: selectedTabNumber,
                         tabNumber: index,
                         isTabletResolution
-                    }}
+                        }}
                     />
                 ))}
             </div>
-              <PlanetsDetailedComponent props={{
+              <PlanetsDetailedComponent
+                  props={{
                   planetsLabels,
                   setSelectedTabNumber,
                   planetsDetailedInfo,
