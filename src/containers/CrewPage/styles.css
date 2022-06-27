@@ -35,6 +35,10 @@
 @media screen and (max-width: 820px){
     .crewContainer {
         align-items: center;
-        height: 40%;
+        height: 90%;
+    }
+    .crewWrapper {
+        grid-template-rows: 45% 1fr;
+        grid-template-columns: unset;
     }
 }
