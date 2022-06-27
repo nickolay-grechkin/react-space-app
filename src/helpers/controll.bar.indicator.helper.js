@@ -9,7 +9,7 @@ export const controlIndicator = () => {
 
     for (let i = 0; i < links.length; i++) {
         let current = links[i];
-        current.dataset.order = i * 9.9 + "rem";
+        current.dataset.order = i * 160 + "%";
         current.addEventListener("click", movePointer);
     }
 
