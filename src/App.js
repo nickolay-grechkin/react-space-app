@@ -50,10 +50,12 @@ const appComponents = [
 function App() {
     const [activeBarIndex, setActiveBarIndex] = useState(0);
     const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
+    const [isMobileResolution, setIsMobileResolution] = useState(window.screen.width <= 400);
 
     useEffect(() => {
         window.addEventListener('resize', () => {
-            setIsTabletResolution(window.screen.width <= 820);
+            setIsTabletResolution(window.screen.width >= 450 && window.screen.width <= 820);
+            setIsMobileResolution(window.screen.width <= 450);
         });
         return () => {
             window.removeEventListener('resize', () => {
@@ -66,6 +68,8 @@ function App() {
         const { backgroundImage, backgroundImageTablet, backgroundImageMobile } = appComponents[activeBarIndex];
         if (isTabletResolution) {
             return backgroundImageTablet;
+        } else if (isMobileResolution) {
+            return backgroundImageMobile;
         } else {
             return backgroundImage;
         }
@@ -73,13 +77,15 @@ function App() {
 
     return (
         <div className="appWrapper">
-            <img className="appBackImage" src={getBackgroundImage()} />
+            <img className="appBackImage" src={getBackgroundImage()} alt='' />
             <div className="appContainer">
                 <TopBarComponent props={{
                     activeBarIndex,
                     setActiveBarIndex,
-                    isTabletResolution
-                }}/>
+                    isTabletResolution,
+                    isMobileResolution
+                }}
+                />
                 {appComponents[activeBarIndex].component}
             </div>
         </div>

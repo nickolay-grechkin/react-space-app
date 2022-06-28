@@ -3,6 +3,7 @@ import React, {useMemo, useState} from "react";
 import {ReactComponent as TopBarIcon} from "../../assets/shared/logo.svg";
 import {BarItemsComponent} from "../BarItemsComponent";
 import {controlIndicator} from "../../helpers/controll.bar.indicator.helper";
+import { ReactComponent as HamburgerIcon } from "../../assets/shared/icon-hamburger.svg";
 import {useEffect} from "react";
 
 const barItems = [
@@ -31,24 +32,28 @@ const TopBarComponent = ({props}) => {
             {/*        <div className="dividerLine" />*/}
             {/*    </div>*/}
             {/*)}*/}
-            <div className="pagesBarWrapper">
-                <div className="pagesBar" id="nav">
-                    <div className="linkPointer" id="pointer" />
-                    {barItems.map((item, index) => (
-                        <BarItemsComponent
-                            key={index}
-                            props={{
-                                number: item.number,
-                                label: item.label,
-                                barIndex: index,
-                                activeBarIndex: props.activeBarIndex,
-                                setActiveBarIndex: props.setActiveBarIndex,
-                                isTabletResolution: props.isTabletResolution
-                            }}
-                        />
-                    ))}
+            {!props.isMobileResolution ? (
+                <div className="pagesBarWrapper">
+                    <div className="pagesBar" id="nav">
+                        <div className="linkPointer" id="pointer" />
+                        {barItems.map((item, index) => (
+                            <BarItemsComponent
+                                key={index}
+                                props={{
+                                    number: item.number,
+                                    label: item.label,
+                                    barIndex: index,
+                                    activeBarIndex: props.activeBarIndex,
+                                    setActiveBarIndex: props.setActiveBarIndex,
+                                    isTabletResolution: props.isTabletResolution
+                                }}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <HamburgerIcon />
+            )}
         </div>
     );
 }

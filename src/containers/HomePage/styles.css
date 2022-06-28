@@ -50,30 +50,6 @@
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-@media screen and (max-width: 820px) {
-    .bottomContentWrapper {
-        align-items: center;
-        height: 100%;
-    }
-    .bottomContentContainer {
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-        height: 70%;
-    }
-    .descriptionHeader {
-        font-size: 20px;
-        line-height: 24px;
-    }
-    .descriptionMiddle {
-        font-size: 150px;
-        line-height: 150px;
-    }
-    .descriptionContainer {
-        text-align: center;
-    }
-}
-
 .exploreButtonContainer {
     cursor: pointer;
 }
@@ -119,4 +95,64 @@
     transition: transform 0.25s ease-in-out;
     will-change: transform;
     backface-visibility: hidden;
+}
+
+@media screen and (max-width: 820px) {
+    .bottomContentWrapper {
+        align-items: center;
+        height: 100%;
+    }
+    .bottomContentContainer {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 70%;
+    }
+    .descriptionHeader {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .descriptionMiddle {
+        font-size: 150px;
+        line-height: 150px;
+    }
+    .descriptionContainer {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .descriptionHeader {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .descriptionMiddle {
+        font-size: 80px;
+        line-height: 100px;
+    }
+    .descriptionBottom {
+        font-size: 15px;
+        line-height: 25px;
+        width: 80%;
+    }
+    .descriptionContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bottomContentWrapper {
+        margin-top: 2rem;
+        align-items: flex-start;
+    }
+    .exploreButton {
+        font-size: 20px;
+        line-height: 23px;
+    }
+    .exploreButton, .expandedButton, .exploreButtonContainer {
+        width: 150px;
+        height: 150px;
+    }
+    .bottomContentContainer {
+        height: 85%;
+    }
 }
