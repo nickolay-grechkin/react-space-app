@@ -5,7 +5,6 @@ export const controlIndicator = () => {
     let pointer = document.getElementById("pointer");
     let links = nav.getElementsByClassName("barItem");
     let barItem = document.querySelector('.barItem');
-    console.log(barItem.clientWidth);
 
     pointer.style.width = `${barItem.clientWidth}px`;
 

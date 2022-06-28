@@ -49,7 +49,7 @@ const appComponents = [
 
 function App() {
     const [activeBarIndex, setActiveBarIndex] = useState(0);
-    const [isTabletResolution, setIsTabletResolution] = useState();
+    const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
 
     useEffect(() => {
         window.addEventListener('resize', () => {

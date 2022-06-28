@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: space-between;
-    height: 75%;
+    height: 100%;
+    grid-row-gap: 3rem;
 }
 
 .slideMenuWrapper {
@@ -18,7 +18,12 @@
     border-radius: 50%;
 }
 
-.slideIndicatorSelected {
+.slideIndicator:hover {
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.slideIndicatorSelected, .slideIndicatorSelected:hover {
     opacity: unset;
 }
 
@@ -34,7 +39,8 @@
     display: flex;
     flex-direction: column;
     grid-row-gap: 2rem;
-    width: 65%;
+    width: 71%;
+    min-height: 20.5rem;
 }
 
 .crewMemberPosition {
@@ -88,9 +94,12 @@
     .crewMemberInfoWrapper {
         align-items: center;
         height: 100%;
+        grid-row-gap: 0;
     }
     .crewMemberInfoContainer {
-        width: 60%;
+        width: 75%;
+        min-height: 13rem;
+        grid-row-gap: 0.5rem;
     }
     .crewMemberInfo {
         height: 75%;

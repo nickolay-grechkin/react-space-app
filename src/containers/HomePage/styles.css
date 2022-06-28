@@ -74,6 +74,10 @@
     }
 }
 
+.exploreButtonContainer {
+    cursor: pointer;
+}
+
 .exploreButton {
     width: 17.12rem;
     height: 17.12rem;
@@ -86,6 +90,23 @@
     line-height: 34px;
     letter-spacing: 5px;
     font-family: 'Bellefair', serif;
+}
+
+.expandedButton {
+    width: 17.12rem;
+    height: 17.12rem;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    background: #FFFFFF;
+    transition: 0.3s;
+}
+
+.exploreButtonContainer:hover > .expandedButton {
+    transform: scale(1.5);
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.1;
 }
 
 .linkPointer {

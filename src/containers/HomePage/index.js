@@ -20,6 +20,7 @@ const HomePage = () => {
                             </div>
                         </div>
                         <div className="exploreButtonContainer">
+                            <div className='expandedButton' />
                             <div className="exploreButton">
                                 EXPLORE
                             </div>
