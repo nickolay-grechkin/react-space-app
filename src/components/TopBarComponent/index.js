@@ -16,6 +16,9 @@ const TopBarComponent = ({props}) => {
 
     useEffect(() => {
         controlIndicator();
+        window.addEventListener('resize', () => {
+            controlIndicator();
+        });
     }, []);
 
     return (

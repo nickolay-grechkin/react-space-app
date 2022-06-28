@@ -4,12 +4,14 @@ export const controlIndicator = () => {
     let nav = document.getElementById("nav");
     let pointer = document.getElementById("pointer");
     let links = nav.getElementsByClassName("barItem");
+    let barItem = document.querySelector('.barItem');
+    console.log(barItem.clientWidth);
 
-    pointer.style.width = "calc(100% /" + links.length + " - " + CONTAINER_PADDING_HALF + ")"
+    pointer.style.width = `${barItem.clientWidth}px`;
 
     for (let i = 0; i < links.length; i++) {
         let current = links[i];
-        current.dataset.order = i * 160 + "%";
+        current.dataset.order = i * 100 + "%";
         current.addEventListener("click", movePointer);
     }
 
