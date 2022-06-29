@@ -1,0 +1,14 @@
+.transitionMenuWrapper {
+    position: absolute;
+    width: 67%;
+    height: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(82px);
+    transition: .3s;
+    transform: translate(100%);
+}
+
+.transitionMenuShown {
+    transform: translate(0);
+}
