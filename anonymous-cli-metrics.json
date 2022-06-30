@@ -1,1 +1,9 @@
-{"metricId":"7b82355c-223e-49b4-b7a2-d1ba21b98176","metrics":{"from":"2022-05-01T19:29:39.149Z","to":"2022-05-01T19:30:13.232Z","successfulInstalls":3,"failedInstalls":0}}
+{
+  "metricId": "7b82355c-223e-49b4-b7a2-d1ba21b98176",
+  "metrics": {
+    "from": "2022-05-01T19:29:39.149Z",
+    "to": "2022-05-01T19:30:13.232Z",
+    "successfulInstalls": 3,
+    "failedInstalls": 0
+  }
+}

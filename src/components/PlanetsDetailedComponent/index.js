@@ -1,26 +1,34 @@
-import PlanetsBarComponent from "../PlanetsBarComponent";
-import React from "react";
-import PlanetDetailedMenuComponent from "../../containers/DestinationPage/components/PlanetDetailedMenuComponent";
+import PlanetsBarComponent from '../PlanetsBarComponent';
+import React from 'react';
+import PlanetDetailedMenuComponent from '../../containers/DestinationPage/components/PlanetDetailedMenuComponent';
+import PropTypes from 'prop-types';
 
-const PlanetsDetailedComponent = ({props}) => {
+const PlanetsDetailedComponent = ({
+  planetsLabels,
+  setSelectedTabNumber,
+  selectedTabNumber,
+  planetsDetailedInfo
+}) => {
+  return (
+    <div className="planetsDetailedContainer">
+      <PlanetsBarComponent
+        planetsLabels={planetsLabels}
+        setSelectedTabNumber={setSelectedTabNumber}
+        selectedTabNumber={selectedTabNumber}
+      />
+      <PlanetDetailedMenuComponent
+        planetsDetailedInfo={planetsDetailedInfo}
+        selectedTabNumber={selectedTabNumber}
+      />
+    </div>
+  );
+};
 
-    return (
-        <div className="planetsDetailedContainer">
-            <PlanetsBarComponent
-                props={{
-                    planetsLabels: props.planetsLabels,
-                    setSelectedTabNumber: props.setSelectedTabNumber,
-                    selectedTabNumber: props.selectedTabNumber
-                }}
-            />
-            <PlanetDetailedMenuComponent
-                props={{
-                    planetsDetailedInfo: props.planetsDetailedInfo,
-                    selectedTabNumber: props.selectedTabNumber
-                }}
-            />
-        </div>
-    );
-}
+PlanetsDetailedComponent.propTypes = {
+  planetsLabels: PropTypes.array,
+  setSelectedTabNumber: PropTypes.any,
+  selectedTabNumber: PropTypes.number,
+  planetsDetailedInfo: PropTypes.array
+};
 
 export default PlanetsDetailedComponent;

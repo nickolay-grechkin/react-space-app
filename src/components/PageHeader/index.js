@@ -1,12 +1,18 @@
-import React from "react";
+import React from 'react';
 import './styles.css';
+import PropTypes from 'prop-types';
 
-const PageHeader = ({props}) => {
-    return (
-        <div className="pageTitle">
-            <span className="pageNumber">{props.pageNumber}</span> {props.pageTitle}
-        </div>
-    );
-}
+const PageHeader = ({ pageNumber, pageTitle }) => {
+  return (
+    <div className="pageTitle">
+      <span className="pageNumber">{pageNumber}</span> {pageTitle}
+    </div>
+  );
+};
+
+PageHeader.propTypes = {
+  pageNumber: PropTypes.string,
+  pageTitle: PropTypes.string
+};
 
 export default PageHeader;
