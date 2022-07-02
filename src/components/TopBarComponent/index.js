@@ -1,5 +1,5 @@
 import './styles.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { ReactComponent as TopBarIcon } from '../../assets/shared/logo.svg';
 import BarItemsComponent from '../BarItemsComponent';
 import { controlIndicator } from '../../helpers/controll.bar.indicator.helper';
@@ -7,7 +7,8 @@ import { ReactComponent as MenuIcon } from '../../assets/shared/icon-hamburger.s
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-// import TransitionMenuComponent from '../TransitionMenuComponent';
+import TransitionMenuComponent from '../TransitionMenuComponent';
+import ReactDOM from 'react-dom';
 
 const barItems = [
   { number: '00', label: 'HOME' },
@@ -19,22 +20,24 @@ const barItems = [
 const TopBarComponent = ({
   isMobileResolution,
   activeBarIndex,
+  isTabletResolution,
+  isTransitionMenuShown,
   setActiveBarIndex,
-  isTabletResolution
+  setIsTransitionMenuShown
 }) => {
-  const [isTransitionMenuShown, setIsTransitionMenuShown] = useState(false);
-
   const handleOnMenuIconClick = () => {
     setIsTransitionMenuShown(!isTransitionMenuShown);
   };
 
   useEffect(() => {
-    controlIndicator();
+    if (!isMobileResolution) {
+      controlIndicator();
+    }
     window.addEventListener('resize', () => {
       controlIndicator();
     });
   }, []);
-
+  const el = document.getElementById('transition-menu-container');
   return (
     <>
       <div className="topNavBarWrapper">
@@ -69,14 +72,17 @@ const TopBarComponent = ({
           </div>
         )}
       </div>
-      {/*<TransitionMenuComponent*/}
-      {/*    props={*/}
-      {/*        {*/}
-      {/*            isTransitionMenuShown,*/}
-      {/*            handleOnMenuIconClick*/}
-      {/*        }*/}
-      {/*    }*/}
-      {/*/>*/}
+      {el &&
+        ReactDOM.createPortal(
+          <TransitionMenuComponent
+            isTransitionMenuShown={isTransitionMenuShown}
+            handleOnMenuIconClick={setIsTransitionMenuShown}
+            menuItems={barItems}
+            setActiveBarIndex={setActiveBarIndex}
+            activeBarIndex={activeBarIndex}
+          />,
+          el
+        )}
     </>
   );
 };
@@ -85,6 +91,8 @@ TopBarComponent.propTypes = {
   isMobileResolution: PropTypes.bool,
   activeBarIndex: PropTypes.number,
   setActiveBarIndex: PropTypes.any,
-  isTabletResolution: PropTypes.bool
+  isTabletResolution: PropTypes.bool,
+  setIsTransitionMenuShown: PropTypes.func,
+  isTransitionMenuShown: PropTypes.func
 };
 export default TopBarComponent;

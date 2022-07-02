@@ -51,6 +51,7 @@ function App() {
   const [activeBarIndex, setActiveBarIndex] = useState(0);
   const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
   const [isMobileResolution, setIsMobileResolution] = useState(window.screen.width <= 400);
+  const [isTransitionMenuShown, setIsTransitionMenuShown] = useState(false);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -85,9 +86,15 @@ function App() {
           setActiveBarIndex={setActiveBarIndex}
           isTabletResolution={isTabletResolution}
           isMobileResolution={isMobileResolution}
+          setIsTransitionMenuShown={setIsTransitionMenuShown}
+          isTransitionMenuShown={isTransitionMenuShown}
         />
         {appComponents[activeBarIndex].component}
       </div>
+      <div
+        id="transition-menu-container"
+        className={`${isTransitionMenuShown ? 'transitionMenuOpened' : ''}`}
+      />
     </div>
   );
 }

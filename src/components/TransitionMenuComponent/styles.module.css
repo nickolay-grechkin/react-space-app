@@ -9,6 +9,32 @@
     transform: translate(100%);
 }
 
+.closeIcon {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+    margin-right: 27px;
+}
+
+.transitionMenuItemsContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 32px;
+    padding: 65px 32px;
+}
+
 .transitionMenuShown {
     transform: translate(0);
+}
+
+.barItemsStyle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    display: flex;
+    grid-column-gap: 11px;
 }
