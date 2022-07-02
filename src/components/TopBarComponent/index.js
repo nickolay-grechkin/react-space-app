@@ -1,5 +1,5 @@
 import './styles.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as TopBarIcon } from '../../assets/shared/logo.svg';
 import BarItemsComponent from '../BarItemsComponent';
 import { controlIndicator } from '../../helpers/controll.bar.indicator.helper';
@@ -25,6 +25,7 @@ const TopBarComponent = ({
   setActiveBarIndex,
   setIsTransitionMenuShown
 }) => {
+  const [el, setEl] = useState();
   const handleOnMenuIconClick = () => {
     setIsTransitionMenuShown(!isTransitionMenuShown);
   };
@@ -37,7 +38,12 @@ const TopBarComponent = ({
       controlIndicator();
     });
   }, []);
-  const el = document.getElementById('transition-menu-container');
+
+  useEffect(() => {
+    console.log('Test');
+    setEl(document.getElementById('transition-menu-container'));
+  });
+
   return (
     <>
       <div className="topNavBarWrapper">

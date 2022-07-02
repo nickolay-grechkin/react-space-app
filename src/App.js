@@ -93,7 +93,7 @@ function App() {
       </div>
       <div
         id="transition-menu-container"
-        className={`${isTransitionMenuShown ? 'transitionMenuOpened' : ''}`}
+        className={`${isTransitionMenuShown ? 'transitionMenuOpened' : 'transitionMenuClosed'}`}
       />
     </div>
   );
