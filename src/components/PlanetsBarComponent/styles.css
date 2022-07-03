@@ -30,3 +30,11 @@
         width: 50%;
     }
 }
+@media screen and (max-width: 450px) {
+    .planetsBarContainer {
+        font-size: 14px;
+        line-height: 17px;
+        grid-column-gap: 1.5rem;
+        width: 75%;
+    }
+}

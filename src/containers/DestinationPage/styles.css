@@ -114,9 +114,16 @@
     }
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 450px) {
     .planetContainer {
         width: 150px;
         height: 150px;
+    }
+    .planetName {
+        font-size: 56px;
+        line-height: 64px;
+    }
+    .planetsDetailedContainer {
+        margin-top: 1.5rem;
     }
 }

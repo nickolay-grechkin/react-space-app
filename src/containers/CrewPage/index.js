@@ -52,9 +52,9 @@ const CrewPage = () => {
   const [selectedSlide, setSelectedSlide] = useState(0);
 
   return (
-    <div className="crewWrapper">
-      <div>
-        <PageHeader pageNumber={'02'} pageTitle={'Meet your crew'} />
+    <div>
+      <PageHeader pageNumber={'02'} pageTitle={'Meet your crew'} />
+      <div className="crewWrapper">
         <div className="crewContainer">
           <CrewInfoComponent
             position={crewDetailedInfo[selectedSlide].position}
@@ -66,9 +66,9 @@ const CrewPage = () => {
             crewDetailedInfo={crewDetailedInfo}
           />
         </div>
-      </div>
-      <div className="imageContainer">
-        <img className="crewImage" src={crewDetailedInfo[selectedSlide].image} alt="" />
+        <div className="imageContainer">
+          <img className="crewImage" src={crewDetailedInfo[selectedSlide].image} alt="" />
+        </div>
       </div>
     </div>
   );

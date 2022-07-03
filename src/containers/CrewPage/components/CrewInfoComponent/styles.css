@@ -82,6 +82,7 @@
     .crewMemberPosition {
         font-size: 24px;
         line-height: 28px;
+
     }
     .crewMemberName {
         font-size: 40px;
@@ -110,5 +111,34 @@
     .imageContainer {
         align-items: end;
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .crewMemberPosition {
+        font-size: 16px;
+        line-height: 18px;
+
+    }
+    .crewMemberName {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .crewMemberDetailedInfo {
+        font-size: 15px;
+        line-height: 25px;
+    }
+    .crewImage {
+        height: 223px;
+    }
+    .crewMemberInfoWrapper {
+        flex-direction: column-reverse;
+        grid-row-gap: 1.5rem;
+    }
+    .imageContainer {
+        order: -1;
+    }
+    .crewMemberInfoContainer {
+        width: 85%;
     }
 }

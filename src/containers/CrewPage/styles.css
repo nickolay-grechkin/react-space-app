@@ -42,3 +42,11 @@
         grid-template-columns: unset;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .crewWrapper {
+        grid-template-rows: 35% 1fr;
+        grid-template-columns: unset;
+        grid-row-gap: 2rem;
+    }
+}
