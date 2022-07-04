@@ -82,6 +82,7 @@ const TechnologyPage = () => {
         </div>
         <div className="technologyPicture">
           <img
+            className="technologyImage"
             src={
               isTabletResolution
                 ? technologies[selectedSlide].landscapeImg
