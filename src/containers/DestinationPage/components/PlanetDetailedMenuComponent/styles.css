@@ -20,3 +20,13 @@
         height: 100%;
     }
 }
+
+@media screen and (max-width: 450px) {
+    .planetViewed {
+        position: unset;
+        width: 85%;
+    }
+    .detailedWrapper {
+        width: 95%;
+    }
+}
