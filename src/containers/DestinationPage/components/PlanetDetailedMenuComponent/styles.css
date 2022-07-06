@@ -11,7 +11,7 @@
     transition: .3s;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 980px) {
     .planetViewed {
         width: 70%;
     }
@@ -24,7 +24,7 @@
 @media screen and (max-width: 450px) {
     .planetViewed {
         position: unset;
-        width: 85%;
+        width: 90%;
     }
     .detailedWrapper {
         width: 95%;

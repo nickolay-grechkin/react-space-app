@@ -59,11 +59,11 @@ const planetsDetailedInfo = [
 const DestinationPage = () => {
   const [selectedTabNumber, setSelectedTabNumber] = useState(0);
 
-  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
+  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 980);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setIsTabletResolution(window.screen.width <= 820);
+      setIsTabletResolution(window.screen.width <= 980);
     });
     return () => {
       window.removeEventListener('resize', () => {

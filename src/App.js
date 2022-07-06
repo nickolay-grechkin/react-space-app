@@ -49,13 +49,13 @@ const appComponents = [
 
 function App() {
   const [activeBarIndex, setActiveBarIndex] = useState(0);
-  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 820);
+  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 980);
   const [isMobileResolution, setIsMobileResolution] = useState(window.screen.width <= 400);
   const [isTransitionMenuShown, setIsTransitionMenuShown] = useState(false);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setIsTabletResolution(window.screen.width >= 450 && window.screen.width <= 820);
+      setIsTabletResolution(window.screen.width >= 450 && window.screen.width <= 980);
       setIsMobileResolution(window.screen.width <= 450);
     });
     return () => {
