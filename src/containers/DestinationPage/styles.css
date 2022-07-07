@@ -29,6 +29,7 @@
     border-bottom: 1px solid #383B4B;
     color: #D0D6F9;
     padding-bottom: 54px;
+    min-height: 11rem;
 }
 
 .planetDistanceData {
@@ -106,7 +107,7 @@
         font-size: 16px;
         text-align: center;
         padding-bottom: 25px;
-        min-height: 11rem;
+        min-height: 6rem;
     }
     .planetDistanceData {
         justify-content: center;

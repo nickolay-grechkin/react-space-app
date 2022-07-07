@@ -43,7 +43,7 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 515px) {
     .crewWrapper {
         grid-template-rows: 35% 1fr;
         grid-template-columns: unset;

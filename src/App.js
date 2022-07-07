@@ -55,8 +55,8 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setIsTabletResolution(window.screen.width >= 450 && window.screen.width <= 980);
-      setIsMobileResolution(window.screen.width <= 450);
+      setIsTabletResolution(window.innerWidth >= 450 && window.innerWidth <= 980);
+      setIsMobileResolution(window.innerWidth <= 450);
     });
     return () => {
       window.removeEventListener('resize', () => {

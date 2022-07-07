@@ -40,7 +40,6 @@ const TopBarComponent = ({
   }, []);
 
   useEffect(() => {
-    console.log('Test');
     setEl(document.getElementById('transition-menu-container'));
   });
 
@@ -50,11 +49,11 @@ const TopBarComponent = ({
         <div className="topBarIcon">
           <TopBarIcon />
         </div>
-        {/*{!props.isTabletResolution && (*/}
-        {/*    <div className="dividerWrapper">*/}
-        {/*        <div className="dividerLine" />*/}
-        {/*    </div>*/}
-        {/*)}*/}
+        {!isTabletResolution && !isMobileResolution && (
+          <div className="dividerWrapper">
+            <div className="dividerLine" />
+          </div>
+        )}
         {!isMobileResolution ? (
           <div className="pagesBarWrapper">
             <div className="pagesBar" id="nav">
