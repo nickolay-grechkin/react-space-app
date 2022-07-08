@@ -7,6 +7,7 @@ import spacePortImage from '../../assets/technology/image-spaceport-portrait.jpg
 import capsuleImageLandscape from '../../assets/technology/image-space-capsule-landscape.jpg';
 import vehicleLaunchImageLandscape from '../../assets/technology/image-launch-vehicle-landscape.jpg';
 import spacePortImageLandscape from '../../assets/technology/image-spaceport-landscape.jpg';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
 
 const technologies = [
   {
@@ -43,18 +44,7 @@ const technologies = [
 const TechnologyPage = () => {
   const [selectedSlide, setSelectedSlide] = useState(0);
 
-  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 980);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setIsTabletResolution(window.screen.width <= 980);
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        setIsTabletResolution(undefined);
-      });
-    };
-  }, [setIsTabletResolution]);
+  const [isTabletResolution] = useScreenWidth();
 
   return (
     <div className="technologyWrapper">

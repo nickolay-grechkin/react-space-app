@@ -7,6 +7,7 @@ import './styles.css';
 import PlanetsViewComponent from '../../components/PlanetsViewComponent';
 import PlanetsDetailedComponent from '../../components/PlanetsDetailedComponent';
 import PageHeader from '../../components/PageHeader';
+import { useScreenWidth } from '../../hooks/useScreenWidth';
 
 const planetsData = [{ image: Moon }, { image: Mars }, { image: Europa }, { image: Titan }];
 
@@ -59,18 +60,7 @@ const planetsDetailedInfo = [
 const DestinationPage = () => {
   const [selectedTabNumber, setSelectedTabNumber] = useState(0);
 
-  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 980);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setIsTabletResolution(window.screen.width <= 980);
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        setIsTabletResolution(undefined);
-      });
-    };
-  });
+  const [isTabletResolution] = useScreenWidth();
 
   return (
     <div className="destinationWrapper">

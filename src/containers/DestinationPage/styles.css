@@ -6,7 +6,7 @@
 .destinationContainer {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 63%;
     height: 100%;
     grid-column-gap: 130px;
     align-items: baseline;

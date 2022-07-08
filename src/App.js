@@ -18,7 +18,7 @@ import technologyBackgroundMobile from './assets/technology/background-technolog
 import DestinationPage from './containers/DestinationPage';
 import CrewPage from './containers/CrewPage';
 import TechnologyPage from './containers/TechnologyPage';
-import { useEffect } from 'react';
+import { useScreenWidth } from './hooks/useScreenWidth';
 
 const appComponents = [
   {
@@ -49,21 +49,8 @@ const appComponents = [
 
 function App() {
   const [activeBarIndex, setActiveBarIndex] = useState(0);
-  const [isTabletResolution, setIsTabletResolution] = useState(window.screen.width <= 980);
-  const [isMobileResolution, setIsMobileResolution] = useState(window.screen.width <= 400);
   const [isTransitionMenuShown, setIsTransitionMenuShown] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setIsTabletResolution(window.innerWidth >= 450 && window.innerWidth <= 980);
-      setIsMobileResolution(window.innerWidth <= 450);
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        setIsTabletResolution(undefined);
-      });
-    };
-  });
+  const [isTabletResolution, isMobileResolution] = useScreenWidth();
 
   const getBackgroundImage = () => {
     const { backgroundImage, backgroundImageTablet, backgroundImageMobile } =
