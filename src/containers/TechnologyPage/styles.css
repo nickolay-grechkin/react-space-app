@@ -75,6 +75,15 @@
     margin-top: 20px;
 }
 
+@media screen and (min-width: 980px) {
+    .technologyImage {
+        width: 85%;
+    }
+    .technologyContainer {
+        width: 95%;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .technologyContainer {
         flex-direction: column-reverse;
