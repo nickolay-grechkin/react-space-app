@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
+    width: 90%;
 }
 
 .detailsSliderContainer {
@@ -75,10 +75,6 @@
     margin-top: 20px;
 }
 
-.technologyImage{
-    height: 85%;
-}
-
 @media screen and (max-width: 980px) {
     .technologyContainer {
         flex-direction: column-reverse;
@@ -114,11 +110,9 @@
 }
 
 @media screen and (max-width: 450px) {
-    .technologyPicture {
-        height: 170px;
-    }
     .technologyImage {
-        height: 100%;
+        width: 374px;
+        height: 170px;
     }
     .slideButton {
         width: 40px;
@@ -140,7 +134,8 @@
     .techDescription {
         font-size: 14px;
         line-height: 20px;
-        margin-top: 10px
+        margin-top: 10px;
+        min-height: 10.5rem;
     }
     .technologyDetails {
         margin-top: 15px;
