@@ -135,7 +135,8 @@
     .planetDistanceData {
         flex-direction: column;
         align-items: center;
-        grid-row-gap: 3rem
+        grid-row-gap: 3rem;
+        padding-bottom: 3rem;
     }
     .destinationWrapper {
         overflow-y: auto;
